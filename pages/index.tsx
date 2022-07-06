@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "../components/Header";
-import { sanityClient } from "../sanity";
+import { sanityClient, urlFor } from "../sanity";
 import { Post } from "../typings";
 
 interface Props {
@@ -10,7 +11,7 @@ interface Props {
 }
 
 export default function Home({ posts }: Props) {
-  console.log(posts);
+  // console.log(posts);
   return (
     <div className="">
       <Head>
@@ -36,7 +37,19 @@ export default function Home({ posts }: Props) {
           className="hidden md:inline-flex h-32 lg:h-full"
           src="https://accountabilitylab.org/wp-content/uploads/2020/03/Medium-logo.png"
           alt="medium-png"
-        ></img>
+        />
+      </div>
+
+      {/* Post */}
+      {/** https://stackoverflow.com/questions/71277628/typeerror-0-next-sanity-webpack-imported-module-0-createimageurlbuilder */}
+      <div>
+        {posts.map((post) => (
+          <Link key={post._id} href={`/post/${post.slug.current}`}>
+            <div>
+              <img src={urlFor(post.mainImage).url()!} alt="" /> //! if not null
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );

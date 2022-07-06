@@ -21,3 +21,5 @@ pnpm create next-app --example with-tailwindcss with-tailwindcss-app
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+https://stackoverflow.com/questions/71277628/typeerror-0-next-sanity-webpack-imported-module-0-createimageurlbuilder
