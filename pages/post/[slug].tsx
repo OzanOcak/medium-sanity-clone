@@ -163,6 +163,20 @@ function Post({ post }: Props) {
             />
           </form>
         )}
+
+        {/* Comment */}
+        <div className="my-5 mx-auto flex max-w-2xl flex-col space-y-2 p-10 shadow shadow-yellow-500">
+          <h3>Comments</h3>
+          <hr />
+          {post.comments.map((comment) => (
+            <div key={comment._id}>
+              <p>
+                <span className="text-yellow-500"> {comment.name}:</span>{" "}
+                {comment.comment}
+              </p>
+            </div>
+          ))}
+        </div>
       </main>
     </>
   );
