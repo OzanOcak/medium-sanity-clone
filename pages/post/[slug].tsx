@@ -62,6 +62,45 @@ function Post({ post }: Props) {
             />
           </div>
         </article>
+
+        <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
+
+        <form className="mx-auto mb-10 flex max-w-2xl flex-col p-5">
+          <h3 className="text-sm text-yellow-500">Enjoyed this article?</h3>
+          <h4 className="text-3xl font-bold">Leave a comment below!</h4>
+          <hr className="mt-2 py-3" />
+          <input type="hidden" name="_id" value={post._id} />
+          <label className="mb-5 block">
+            <span className="text-gray-700">Name</span>
+            <input
+              className="form-input mt-1 block w-full rounded border py-2 px-3 shadow ring-yellow-500 outline-none focus:ring"
+              placeholder="John Appleseed"
+              type="text"
+            />
+          </label>
+          <label className="mb-5 block">
+            <span className="text-gray-780">Email</span>
+            <input
+              className="form-input mt-1 block w-full rounded border py-2 px-3 shadow ring-yellow-500 outline-none focus:ring"
+              placeholder="John Appleseed"
+              type="text"
+            />
+          </label>
+
+          <label className="mb-5 block">
+            <span className="text-gray-700">Comment</span>
+            <textarea
+              className="form-textarea mt-1 block w-full rounded border py-2 px-3 shadow ring-yellow-500 outline-none focus:ring"
+              placeholder="John Appleseed"
+              rows={8}
+            />
+          </label>
+
+          <input
+            type="submit"
+            className="focus:shadow-outline cursor-pointer rounded bg-yellow-500 py-2 px-4 font-bold text-white shadow hover:bg-yellow-400 focus:outline-none"
+          />
+        </form>
       </main>
     </>
   );
